@@ -1,0 +1,161 @@
+@charset "utf-8";
+$link: #6CCA90;
+$warning: #FFEFC2;
+$primary: #2a70d3;
+$steps-active-color: $primary;
+$steps-completed-color: $primary;
+$steps-divider-size: 0.2em;
+
+@import "~bulma/bulma.sass";
+@import "~bulma-o-steps/bulma-steps";
+
+.column.noleft {
+  padding-left: 0;
+}
+ion-icon {
+  font-size: 96px !important;
+  &.icon-xlarge {
+    font-size: 42px !important;
+  }
+}
+:host(.icon-xxlarge) {
+  font-size: 96px !important;
+}
+:host(.icon-xlarge) {
+  font-size: 42 !important;
+}
+.recording {
+  canvas {
+    color: red;
+  }
+}
+
+.record_button {
+  cursor: pointer;
+  &.is-recording {
+    color: red;
+   }
+  &:hover {
+    color: red;
+  }
+}
+
+.recContainer {
+  min-height: 20rem;
+
+  p.label {
+    padding-left: 0.8rem;
+    font-weight: normal;
+    &.nocenter {
+      padding-left: 0;
+    }
+  }
+}
+.playback {
+  padding-top: 2rem;
+}
+#lang {
+  padding: 0.4rem;
+}
+section.hero {
+  &.splash {
+    background: url("assets/img/header.jpg");
+    background-size: cover;
+    height: 18rem;
+  }
+}
+.video-content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  &::after {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.modal {
+  .modal-content {
+    margin: 0 auto;
+
+    width: 640px;
+  }
+}
+img.buttonloading {
+  height: 46px;
+}
+
+.help_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+button {
+  
+  &.take_part {
+    margin: 2rem 0;
+  }
+}
+
+.help {
+
+  ol {
+    li {
+      font-size: 1.2rem;
+    }
+  }
+  .close_button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  section.hero {
+    &.splash {
+      background: url("assets/img/header_mobile.jpg");
+      background-size: cover;
+    }
+  }
+
+
+  .recContainer {
+    height: initial;
+  }
+  section.section {
+    padding: 1.5rem;
+    &.main_body {
+      padding-top: 0;
+    }
+  }
+  section.step_section {
+    padding: 1.25 rem 0.75rem;
+  }
+  .steps {
+    &.is-large {
+      .steps-marker {
+        height: 2.2rem;
+        width: 2.2rem;
+        overflow: hidden;
+      }
+      &.is-horizontal .steps-segment:not(:last-child):after {
+        top: calc(1.5rem - (0.3em));
+      }
+    }
+    .steps-content {
+      p {
+        display: none;
+      }
+    }
+  }
+}
